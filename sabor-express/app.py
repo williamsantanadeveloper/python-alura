@@ -1,6 +1,6 @@
 import os
 
-restaurents = []
+restaurents = ['Pizza', 'Sushi']
 
 
 def show_program_name():
@@ -24,32 +24,41 @@ def show_options():
 
 
 def finish_app():
-    os.system('cls')
-    print('Encerrando app')
+    show_subtitle('Encerrando app')
     print()
+
+
+def return_menu():
+    input('\nDigite uma tecla para voltar para o menu ')
+    main()
 
 
 def invalid_option():
     print('Opção inválida!')
-    input('Digite uma tecla para voltar para o menu principal ')
-    main()
+    return_menu()
+
+
+def show_subtitle(text):
+    os.system('cls')
+    print(text)
 
 
 def register_restaurent():
-    os.system('cls')
-    print('Cadastros de novos restaurantes')
+    show_subtitle('Cadastros de novos restaurantes')
 
     name = input('Informe o nome do seu restaurante: ')
     restaurents.append(name)
     print(f'O restaurante {name} foi cadastado com sucesso!')
-    input('Digite uma tecla para voltar para o menu principal')
-    main()
+
+    return_menu()
 
 
 def listing_restaurant():
-    os.system('cls')
-    for restaurant in register_restaurent():
-        print(restaurant)
+    show_subtitle('Listando restaurantes')
+    for restaurant in restaurents:
+        print(f'.{restaurant}')
+
+    return_menu()
 
 
 def choose_option():
