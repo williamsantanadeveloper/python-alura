@@ -1,6 +1,6 @@
 import os
 
-restaurents = [
+restaurants = [
     {'nome': 'Praça', 'categoria': 'Japonesa', 'ativo': False},
     {'nome': 'Pizza Suprema', 'categoria': 'Pizza', 'ativo': True},
     {'nome': 'Cantina', 'categoria': 'Italiana', 'ativo': False}
@@ -62,7 +62,7 @@ def register_restaurent():
         'ativo': False  # regra de negócio
     }
 
-    restaurents.append(dates_of_restaurents)
+    restaurants.append(dates_of_restaurents)
 
     print(f'\nO restaurante {name} foi cadastado com sucesso!')
 
@@ -71,12 +71,12 @@ def register_restaurent():
 
 def listing_restaurant():
     show_subtitle('Listando restaurantes')
-    for restaurant in restaurents:
-        name_restaurent = restaurant['nome']
+    for restaurant in restaurants:
+        name = restaurant['nome']
         category = restaurant['categoria']
         active = 'ativado' if restaurant['ativo'] else 'desativado'
         print(f'{'Nome'.ljust(20)} {'Categoria'.ljust(20)} {'Status'}')
-        print(f'-{name_restaurent.ljust(18)} | {category.ljust(18)} | {active}')
+        print(f'-{name.ljust(18)} | {category.ljust(18)} | {active}')
 
     return_menu()
 
@@ -88,11 +88,11 @@ def active_or_desactive_restaurant():
         'Digite o nome do seu restaurante que deseja alterar o estado: ')
     find_restaurant = False
 
-    for restaurante in restaurents:
-        if name == restaurante['nome']:
+    for restaurant in restaurants:
+        if name == restaurant['nome']:
             find_restaurant = True
-            restaurante['ativo'] = not restaurante['ativo']
-            msg = f'O restaurante {name} foi ativado com sucesso! ' if restaurante['ativo'] else f'O restaurante {
+            restaurant['ativo'] = not restaurant['ativo']
+            msg = f'O restaurante {name} foi ativado com sucesso! ' if restaurant['ativo'] else f'O restaurante {
                 name} foi desativado com sucesso!'
             print(msg)
     if not find_restaurant:
