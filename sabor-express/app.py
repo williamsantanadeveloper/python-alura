@@ -8,7 +8,7 @@ restaurants = [
 
 
 def show_program_name():
-
+    ''' Exibe o nome estilizado do programa na tela '''
     print("""
 ░██████╗░█████╗░██████╗░░█████╗░██████╗░  ███████╗██╗░░██╗██████╗░██████╗░███████╗░██████╗░██████╗
 ██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗  ██╔════╝╚██╗██╔╝██╔══██╗██╔══██╗██╔════╝██╔════╝██╔════╝
@@ -21,6 +21,7 @@ def show_program_name():
 
 
 def show_options():
+    '''Essa função é responsável por mostar as opções'''
     print('1. Cadastrar restaurante')
     print('2. Listar restaurante')
     print('3. Alternar estado restaurante')
@@ -28,21 +29,25 @@ def show_options():
 
 
 def finish_app():
+    '''Essa função é responsável por finalizar o app'''
     show_subtitle('Encerrando app')
     print()
 
 
 def return_menu():
+    '''Essa função é responsável por retornar ao menu'''
     input('\nDigite uma tecla para voltar para o menu ')
     main()
 
 
 def invalid_option():
+    '''Essa função é responsável para mostrar opção inválida'''
     print('Opção inválida!')
     return_menu()
 
 
 def show_subtitle(text):
+    '''Essa função é responsável por mostar o subtítulo'''
     os.system('cls')
     line = '*' * len(text)
     print(line)
@@ -51,6 +56,14 @@ def show_subtitle(text):
 
 
 def register_restaurent():
+    '''Essa é responsável por cadastrar um novo restaurante
+    Inputs:
+    - Nome
+    - Categoria
+
+    Outputs:
+    - Adiciona um novo restaurante a lista de restaurantes
+    '''
     show_subtitle('Cadastros de novos restaurantes')
 
     name = input('\nInforme o nome do seu restaurante: ')
@@ -70,6 +83,7 @@ def register_restaurent():
 
 
 def listing_restaurant():
+    '''Essa função é responsável por listar os retaurantes'''
     show_subtitle('Listando restaurantes')
     for restaurant in restaurants:
         name = restaurant['nome']
@@ -82,6 +96,11 @@ def listing_restaurant():
 
 
 def active_or_desactive_restaurant():
+    '''Essa função é responsável por alterar o estado do restaurante
+    Inputs:
+    - Nome
+    - Categoria
+    '''
     show_subtitle('Alternando estado restaurante')
 
     name = input(
@@ -102,6 +121,10 @@ def active_or_desactive_restaurant():
 
 
 def choose_option():
+    '''Essa função é responsável para o usuário escolher a opção que ele deseja
+    Inputs:
+    - Escolher a opção
+    '''
     try:
         chosen_option = int(input('Escolha uma opção: '))
         # choose_option = int(choose_option)
@@ -124,6 +147,7 @@ def choose_option():
 
 
 def main():
+    '''Essa função é responsável por agrupar o sistema'''
     os.system('cls')
     show_program_name()
     show_options()

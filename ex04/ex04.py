@@ -7,8 +7,8 @@ person = {
     'city': 'Aracaju'
 }
 
-for info in person.values():
-    print(info)
+for key, value in person.items():
+    print(key, value)
 
 # 2º question
 person['age'] = 55
