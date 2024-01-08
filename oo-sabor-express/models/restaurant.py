@@ -1,14 +1,21 @@
 class Restaurant():
-    name = ''
-    category = ''
-    active = False
+    restaurants = []
 
+    def __init__(self, name, category):
+        self.name = name
+        self.category = category
+        self.active = False
 
-restaurant_praca = Restaurant()
-restaurant_praca.name = 'Praça'
-restaurant_praca.category = 'Gourmet'
-restaurant_pizza = Restaurant()
+        Restaurant.restaurants.append((self))
 
-restaurants = [restaurant_pizza, restaurant_praca]
+    def __str__(self):
+        return f'{self.name} | {self.category}'
 
-print(restaurant_praca.active)
+    def listing_restaurants():
+        for restaurent in Restaurant.restaurants:
+            print(f'{restaurent.name} | {restaurent.category} | {restaurent.active}')
+
+restaurant_praca = Restaurant('Praça', 'Gourmet')
+restaurant_pizza = Restaurant('Pizza Express', 'Italiana')
+
+Restaurant.listing_restaurants()
