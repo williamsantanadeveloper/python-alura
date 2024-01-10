@@ -62,10 +62,16 @@ class BankCustomer():
     def __str__(self):
         return f'Nome: {self._name} | Idade: {self._age} | CPF: {self._cpf} | Endereço: {self._address} | Saldo: R${self._balance}'
 
+    @classmethod
+    def create_account(cls, holder, initial_balance):
+        account = f'A conta do usuário {holder} foi criada com o saldo inicial de R${initial_balance}'
+        return account
+
 
 client1 = BankCustomer('William', 19, '123.456.789-01', 'RUA ABC', 10000)
 client2 = BankCustomer('Kaio', 19, '123.456.789-01', '', 30000)
 client3 = BankCustomer('Antônio', 19, '123.456.789-01', 'RUA ABC', 20000)
+client4 = BankCustomer.create_account('Lyra', 50000)
 
 print(client1)
 print()
@@ -73,3 +79,4 @@ print(client2)
 print()
 print(client3)
 print()
+print(client4)
