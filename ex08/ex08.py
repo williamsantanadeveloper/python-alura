@@ -28,8 +28,7 @@ class Restaurant():
         return f'{self.name} | {self.category} | {self.activity}'
 
 
-restaurant1 = Restaurant('Sal & Brasa', 'Rodízio',
-                         'Avenida Santos Dumont', True, 75)
+restaurant1 = Restaurant('Sal & Brasa', 'Rodízio', 'Avenida Santos Dumont', True, 75)
 
 print(restaurant1)
 
