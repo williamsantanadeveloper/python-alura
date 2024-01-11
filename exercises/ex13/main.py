@@ -1,0 +1,20 @@
+from ex13 import Carro, Moto
+
+cg_160 = Moto('honda', '160 Start', 'eeeee')
+biz = Moto('honda', '125', 'esportiva')
+bmw_k = Moto('bmw', '1200 RS', 'esportiva')
+ferrari = Carro('ferrari', '812 GTS', 2)
+mustang = Carro('Ford', '2023', 2)
+creta = Carro('Hyundai', '2024', 4)
+
+print(cg_160)
+print()
+print(biz)
+print()
+print(bmw_k)
+print()
+print(ferrari)
+print()
+print(mustang)
+print()
+print(creta)
