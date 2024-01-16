@@ -2,7 +2,7 @@ from models.cardapio.item_cardapio import ItemCardapio
 
 
 class Bebida(ItemCardapio):
-    def __init__(self, name, size, price=float):
+    def __init__(self, name, price=float, size=''):
         super().__init__(name, price)
         self._size = size
 
@@ -11,3 +11,5 @@ class Bebida(ItemCardapio):
 
     def aplicar_desconto(self):
         self._price -= (self._price * 0.08)
+        self._price = max(0, self._price)
+        return self._price

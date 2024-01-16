@@ -13,3 +13,5 @@ class Sobremesa(ItemCardapio):
 
     def aplicar_desconto(self):
         self._price -= (self._price * 0.10)
+        self._price = max(0, self._price)
+        return self._price
