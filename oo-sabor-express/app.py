@@ -16,7 +16,7 @@ restaurant_praca.add_itens_no_cardapio(prato_pao)
 
 
 def main():
-    restaurant_praca.exibir_cardapio
+    # restaurant_praca.exibir_cardapio
     pass
 
 

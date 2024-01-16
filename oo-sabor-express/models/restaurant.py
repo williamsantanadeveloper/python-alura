@@ -19,7 +19,7 @@ class Restaurant():
 
     @classmethod
     def listing_restaurants(cls):
-        print(f'{'Nome do restaurante'.ljust(25)} {
+        print(f'{'Nome do restaurante '.ljust(25)} {
               'Categoria'.ljust(25)} {'Avaliação'.ljust(25)} {'Status'}')
         for restaurent in cls.restaurants:
             print(f'{restaurent._name.ljust(25)} | {restaurent._category.ljust(25)} | {
@@ -61,5 +61,5 @@ class Restaurant():
                 print(msg_prato)
             else:
                 msg_bebida = f'{
-                    i} - Nome: {item._name} | Preço: {item._price} | Tamanho: {self._size}'
+                    i} - Nome: {item._name} | Preço: {item._price} | Tamanho: '
                 print(msg_bebida)
